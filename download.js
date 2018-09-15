@@ -8,7 +8,7 @@ var _cardListHtml     = '';
 function loadCards() {
   _cardDB = localStorage.getItem('cardDB');
   _cardDB = JSON.parse(_cardDB);
-  
+
   if (!_cardDB) {
     fetchAllCards();
   } else {
@@ -48,7 +48,7 @@ function fetchAllCards() {
           image: image
         }
     });
-    
+
     console.log('cards fetched from api');
     saveCards();
     buildList();
@@ -58,54 +58,79 @@ function fetchAllCards() {
 // buildList() generate image list
 function buildList() {
   var html = '';
+  alert(_userInputElem.val());
   var input = _userInputElem.val().toLowerCase().split(/\n/);
   var unfound = 0;
-  
+
   if (!_cardDB) {
     return false;
   }
-  
+
   for (var i=0; i<input.length; i++) {
     var cardname = $.trim(input[i]).replace(':', '').replace(' ', '__');
-       
+
     if (cardname in _cardDB) {
       var card = _cardDB[cardname];
       var newCard = '';
 
       newCard += '<a href="https://netrunnerdb.com/en/card/' + card.code + '" title="' + cardname + '" target="_blank">';
       newCard += '  <img src="' + card.image + '" alt="' + card.code + '" />';
-      newCard += '</a>'; 
+      newCard += '</a>';
 
       // console.log(JSON.stringify(card) + ' ' + cardname);
-      
+
       // append
       html += newCard;
-      
+
       // prepend
       // html = newCard + html;
     } else {
       unfound++;
     }
   }
-  
+
   // if (unfound > 0) {
   //   html += '<p class="no-print text-muted">' + unfound + ' not found<p>';
   // }
-  
+
   if (_cardListHtml != html) {
     // save current html
     _cardListHtml = html;
     // show images html
     _cardListElem.html(_cardListHtml);
-  } 
-} 
+  }
+}
 
 // assignEvents() rebuild image list when textarea changes
 function assignEvents() {
   $(document).on('input propertychange', _userInputElem, function() {
     buildList();
-  });  
+  });
 }
 
+function findGetParameter(parameterName) {
+    var result = null,
+        tmp = [];
+    location.search
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+          tmp = item.split("=");
+          if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+    return result;
+}
+
+function fillDeck() {
+    var deckId = findGetParameter("id");
+    if (deckId == null) {
+	deckId = "52609";
+    }
+    alert(deckId);
+    _userInputElem.text(deckId);
+    alert(_userInputElem.val());
+}
+
+fillDeck();
 assignEvents();
 loadCards();

@@ -10,11 +10,21 @@
   <body>
     <div class="print-hide">
 
-      <h1>Netrunner Proxy Generator</h1>
+      <h1>Sacrifical Clone: Netrunner Proxy Generator</h1>
 
       <p>
-	Enter card names into the sidebar &ndash; one card per line.
-	Credits got to <a href="https://netrunnerdb.com/" tittle="NetrunnerDB">netrunnerdb.com</a> and <a href="http://cardgamedb.com/" tittle="Cardgamedb">cardgamedb.com</a>  for providing the API and images.
+	Enter an <a href="https://netrunnerdb.com">anrdb</a> decklist number.
+      </p>
+
+      <p>
+	Thanks to <a href="https://codepen.io/Theavon/full/YQmgBG">martin</a> for generating most of this code.
+	Card images come from <a href="https://netrunnerdb.com/" tittle="NetrunnerDB">netrunnerdb.com</a> and <a href="http://cardgamedb.com/" tittle="Cardgamedb">cardgamedb.com</a>.
+	Thanks for the API and images!
+	If the images don't load, it is likely a problem on these sites.
+      </p>
+
+      <p>
+	If you can run python scripts, the <a href="https://github.com/Ecophagy/ANRProxyGenerator">ANRProxyGenerator</a> is a similar option.
       </p>
 
       <p>
@@ -22,14 +32,10 @@
       </p>
 
       <textarea id="UserInput" name="UserInput" placeholder="Card Names" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus>
-	Exchange of Information
-	Desperado
-	The Toolbox
-	Grimoire
+52609
       </textarea>
 
     </div>
-
     <div id="Cards"></div>
   </body>
 </html>
