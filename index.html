@@ -1,32 +1,35 @@
 <html>
-<head>
-<title>Netunner Proxy Generator</title>
-</head>
-<body>
-<div class="print-hide">
+  <head>
+    <title>Netunner Proxy Generator</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="./format.css" rel="stylesheet">
+    <script type="text/javascript" src="./download.js"></script>
+  </head>
 
-  <h1>
-    Netrunner Proxy Generator
-  </h1>
+  <body>
+    <div class="print-hide">
 
-  <p>
-    Enter card names into the sidebar &ndash; one card per line. 
-    Credits got to <a href="https://netrunnerdb.com/" tittle="NetrunnerDB">netrunnerdb.com</a> and <a href="http://cardgamedb.com/" tittle="Cardgamedb">cardgamedb.com</a>  for providing the API and images.
-  </p>
-  
-  <p>
-    <a class="btn" href="javascript:window.print();" title="Print">Print Cards</a>
-  </p>
-  
-  <textarea id="UserInput" name="UserInput" placeholder="Card Names" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus>
-Exchange of Information
-Desperado
-The Toolbox
-Grimoire
-</textarea>
-  
-</div>
+      <h1>Netrunner Proxy Generator</h1>
 
-<div id="Cards"></div>
-</body>
+      <p>
+	Enter card names into the sidebar &ndash; one card per line.
+	Credits got to <a href="https://netrunnerdb.com/" tittle="NetrunnerDB">netrunnerdb.com</a> and <a href="http://cardgamedb.com/" tittle="Cardgamedb">cardgamedb.com</a>  for providing the API and images.
+      </p>
+
+      <p>
+	<a class="btn" href="javascript:window.print();" title="Print">Print Cards</a>
+      </p>
+
+      <textarea id="UserInput" name="UserInput" placeholder="Card Names" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus>
+	Exchange of Information
+	Desperado
+	The Toolbox
+	Grimoire
+      </textarea>
+
+    </div>
+
+    <div id="Cards"></div>
+  </body>
 </html>
