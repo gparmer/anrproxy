@@ -1,0 +1,181 @@
+// card
+$card-width:            6.35cm;
+$card-height:           8.80cm;
+$card-scale:            0.95;
+
+// ui
+$font-family-default:   "Khula", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-mono:      "Courier New", monospace;
+$color-corp:            #0A539D;
+$color-runner:          #B93A2F;
+
+@import url("https://fonts.googleapis.com/css?family=Khula");
+
+
+
+html, 
+html * {
+  box-sizing: border-box;
+  font-family: $font-family-default;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #222;
+}
+
+body {
+  margin: 0;
+  background-color: white;
+}
+
+textarea { // sidebar
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 18rem;
+  height: 100vh;
+  padding: 3rem 1rem 6rem 1rem;
+  border: 0 none;
+  box-shadow: inset 0.4rem 0 0 darken($color-runner, 6%);
+  background-color: $color-runner;
+  color: white;
+  font-family: $font-family-mono;
+  font-size: 14px;
+  outline: none;
+  resize: none;
+  overflow-y: auto;
+}
+
+h1 {
+  margin: 3rem 0 1rem 0;
+  font-size: 1.75rem;
+}
+
+P {
+  margin: 1rem 0
+}
+
+a {
+  color: $color-corp;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.9em 1.2em 0.6em 1.2em;
+  border: 0 solid none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(black, 0.2);
+  // background: hsl(0, 0%, 92%) linear-gradient(to top, hsl(0, 15%, 90%) 0%, hsl(0, 10%, 96%) 100%);
+  background-color: $color-corp;
+  color: white;
+  line-height: 1;
+  text-decoration: none !important;
+  cursor: pointer;
+  
+  background-position: center;
+  transition: background 0.5s;
+  
+  &:hover {
+    background: $color-runner radial-gradient(circle, transparent 1%, $color-runner 1%) center/15000%;
+  }
+  
+  &:active {
+    background-color: $color-corp;
+    background-size: 100%;
+    transition: background 0s;
+  }
+}
+
+img {
+  width: $card-width * $card-scale;
+  height: $card-height * $card-scale;
+  vertical-align: top;
+  border: 0.075cm solid black;
+  background-color: black;
+}
+
+#Cards,
+#Cards > * {
+  line-height: 0;
+}
+
+.text-muted {
+  color: hsl(0, 0%, 62%);
+}
+
+[data-loading] {
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 1em;
+}
+
+@media print {
+  
+  .print-hide {
+    display: none;
+  }
+}
+
+
+@media screen {
+  
+  body {
+    margin: 0 1rem ($card-height / 2) 20rem;
+    overflow-y: scroll;
+    cursor: default;
+  }
+  
+  #Cards {
+    margin-top: 3rem;
+
+    > * {
+      display: inline-block;
+      margin: 0;
+      vertical-align: top;
+      position: relative;
+      z-index: 10;
+      width: $card-width * $card-scale;
+      height: $card-height * $card-scale;
+      background: #f6f7f7 linear-gradient(-54deg, rgba(black, 0.06) 50%, rgba(black, 0.02) 50%);
+      transform: scale(1);
+      // filter: blur(0);
+      transition: 
+        transform 0.125s cubic-bezier(0,1.2,.7,.6),
+        filter 0.1s ease-in-out;
+
+      > img {
+        border-radius: 0.1cm;
+        background-image: none;
+      }
+      
+      > img:after {
+        content: 'card';
+        padding: 1.621em 1rem;
+        line-height: 1.5;
+      }
+      
+      > img:after,
+      > *:not(img) {
+        
+      }
+    } 
+    
+    > p {
+      padding: 1.621em 1rem;
+      line-height: 1.5;
+    }
+    
+    > a:hover {
+      transform: scale(1.1);
+      z-index: 20;
+    }
+    
+    
+    &:hover > a:not(:hover) img {
+      // filter: blur(0.5px) grayscale(0.5);
+    }
+  }
+}
