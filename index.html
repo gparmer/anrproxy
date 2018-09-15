@@ -4,7 +4,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="./format.css" rel="stylesheet">
-    <script type="text/javascript" src="./download.js"></script>
   </head>
 
   <body>
@@ -13,29 +12,71 @@
       <h1>Sacrifical Clone: Netrunner Proxy Generator</h1>
 
       <p>
-	Enter an <a href="https://netrunnerdb.com">anrdb</a> decklist number.
+	New to Android Netrunner and can't find the cards to buy?
+	The community is always happy to play with proxies!
       </p>
 
       <p>
+	If you're new, <a href="https://teamcovenant.com/learning/android-netrunner/how-to-play-guide-new-players-anr">Team Covenant</a> has made some great resources for getting into the game.
+	Those resources include the following decks:
+	<ul>
+	  <li>Runner:
+	    <ul>
+	      <li><a href="https://teamcovenant.com/learning/android-netrunner/shaper-rielle-kit-peddler-starter-deck">Shaper</a>: enter 49800 below</li>
+	      <li><a href="https://teamcovenant.com/android-netrunner/learning-netrunner-criminal-gabriel-gabe-santiago-starter-deck">Criminal</a>: enter 49798 below</li>
+	      <li><a href="https://teamcovenant.com/android-netrunner/learning-netrunner-anarch-valencia-val-starter-deck">Anarch</a>: enter 49803 below</li>
+	    </ul>
+	  </li>
+	  <li>Corp:
+	    <ul>
+	      <li><a href="https://teamcovenant.com/android-netrunner/learning-netrunner-haas-bioroid-stronger-together-starter-deck">Haas Bioroid</a>: enter 49801 below</li>
+	      <li><a href="https://teamcovenant.com/android-netrunner/learning-netrunner-jinteki-tennin-institute-starter-deck">Jinteki</a>: enter 49799 below</li>
+	      <li><a href="https://teamcovenant.com/android-netrunner/learning-netrunner-weyland-skorpios-defense-systems">Weyland</a>: enter 49797 below</li>
+	      <li><a href="https://teamcovenant.com/android-netrunner/learning-netrunner-nbn-new-angeles-sol-starter-deck">NBN</a>: enter 49802 below</li>
+	    </ul>
+	  </li>
+
+	</ul>
+      </p>
+
+      <p>
+	Enter a <a href="http://www.netrunnerdb.com/en/decklists">decklist</a> from <a href="https://netrunnerdb.com">Netrunner DB</a> (of the form "https://netrunnerdb.com/en/decklist/xxxxx/text-name"), or enter the deck id (the "xxxxx" in the previous example) directly:
+      </p>
+      <textarea id="UserInput" name="UserInput" placeholder="Deck ID/URL" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" rows="1" autofocus>52609</textarea>
+
+      <p>
+	<a class="btn" href="javascript:window.print();" title="Print">Print Cards</a>
+      </p>
+
+      <p>
+	<div id="DeckURL" name="DeckURL"></div>
+      </p>
+
+      <p>
+      </p>
+
+    </div>
+    <div id="Cards"></div>
+
+    <div class="print-hide">
+      <p>
 	Thanks to <a href="https://codepen.io/Theavon/full/YQmgBG">martin</a> for generating most of this code.
+	If you can run python scripts, the <a href="https://github.com/Ecophagy/ANRProxyGenerator">ANRProxyGenerator</a> is a similar option.
 	Card images come from <a href="https://netrunnerdb.com/" tittle="NetrunnerDB">netrunnerdb.com</a> and <a href="http://cardgamedb.com/" tittle="Cardgamedb">cardgamedb.com</a>.
 	Thanks for the API and images!
 	If the images don't load, it is likely a problem on these sites.
       </p>
 
       <p>
-	If you can run python scripts, the <a href="https://github.com/Ecophagy/ANRProxyGenerator">ANRProxyGenerator</a> is a similar option.
+	Designed and build by <a href="https://twitter.com/__gparmer">@gparmer</a> ("ycombinator" on most ANR forums). Please make bug reports and pull requests on <a href="https://github.com/gparmer/anrproxy">github</a>.
       </p>
 
       <p>
-	<a class="btn" href="javascript:window.print();" title="Print">Print Cards</a>
+	The information presented on this site about Android:Netrunner, both literal and graphical, is copyrighted by Fantasy Flight Games and/or Wizards of the Coast.<br>
+
+This website is not produced, endorsed, supported, or affiliated with Fantasy Flight Games and/or Wizards of the Coast.
       </p>
-
-      <textarea id="UserInput" name="UserInput" placeholder="Card Names" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus>
-52609
-      </textarea>
-
     </div>
-    <div id="Cards"></div>
   </body>
+  <script type="text/javascript" src="./download.js"></script>
 </html>

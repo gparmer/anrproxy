@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Khula");
 html,
 html * {
-  box-sizing: border-box;
   font-family: "Khula", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-weight: 300;
@@ -15,12 +14,8 @@ body {
 }
 
 textarea {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 18rem;
-  height: 100vh;
-  padding: 3rem 1rem 6rem 1rem;
+  width: 20rem;
+  padding: 1rem 1rem 1rem 1rem;
   border: 0 none;
   box-shadow: inset 0.4rem 0 0 #a13229;
   background-color: #B93A2F;
@@ -101,7 +96,7 @@ img {
 }
 @media screen {
   body {
-    margin: 0 1rem 4.4cm 20rem;
+    margin: 0 1rem 4.4cm 3rem;
     overflow-y: scroll;
     cursor: default;
   }

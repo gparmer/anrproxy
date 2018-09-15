@@ -11,11 +11,9 @@ $color-runner:          #B93A2F;
 
 @import url("https://fonts.googleapis.com/css?family=Khula");
 
-
-
-html, 
+html,
 html * {
-  box-sizing: border-box;
+//  box-sizing: border-box;
   font-family: $font-family-default;
   font-size: 18px;
   font-weight: 300;
@@ -28,13 +26,13 @@ body {
   background-color: white;
 }
 
-textarea { // sidebar
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 18rem;
-  height: 100vh;
-  padding: 3rem 1rem 6rem 1rem;
+textarea {
+//  position: fixed;
+//  top: 0;
+//  left: 0;
+  width: 20rem;
+//  height: 100vh;
+  padding: 1rem 1rem 1rem 1rem;
   border: 0 none;
   box-shadow: inset 0.4rem 0 0 darken($color-runner, 6%);
   background-color: $color-runner;
@@ -73,14 +71,14 @@ a {
   line-height: 1;
   text-decoration: none !important;
   cursor: pointer;
-  
+
   background-position: center;
   transition: background 0.5s;
-  
+
   &:hover {
     background: $color-runner radial-gradient(circle, transparent 1%, $color-runner 1%) center/15000%;
   }
-  
+
   &:active {
     background-color: $color-corp;
     background-size: 100%;
@@ -113,7 +111,7 @@ img {
 }
 
 @media print {
-  
+
   .print-hide {
     display: none;
   }
@@ -121,13 +119,13 @@ img {
 
 
 @media screen {
-  
+
   body {
-    margin: 0 1rem ($card-height / 2) 20rem;
+    margin: 0 1rem ($card-height / 2) 3rem;
     overflow-y: scroll;
     cursor: default;
   }
-  
+
   #Cards {
     margin-top: 3rem;
 
@@ -142,7 +140,7 @@ img {
       background: #f6f7f7 linear-gradient(-54deg, rgba(black, 0.06) 50%, rgba(black, 0.02) 50%);
       transform: scale(1);
       // filter: blur(0);
-      transition: 
+      transition:
         transform 0.125s cubic-bezier(0,1.2,.7,.6),
         filter 0.1s ease-in-out;
 
@@ -150,30 +148,30 @@ img {
         border-radius: 0.1cm;
         background-image: none;
       }
-      
+
       > img:after {
         content: 'card';
         padding: 1.621em 1rem;
         line-height: 1.5;
       }
-      
+
       > img:after,
       > *:not(img) {
-        
+
       }
-    } 
-    
+    }
+
     > p {
       padding: 1.621em 1rem;
       line-height: 1.5;
     }
-    
+
     > a:hover {
       transform: scale(1.1);
       z-index: 20;
     }
-    
-    
+
+
     &:hover > a:not(:hover) img {
       // filter: blur(0.5px) grayscale(0.5);
     }
