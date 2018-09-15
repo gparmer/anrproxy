@@ -5,8 +5,8 @@ If you're a new player and you find this glorious game, is it possible to get ca
 As FFG can't sell them, your only option is to print them yourself (and put them into sleeves with other cards), or to send them to a printing company.
 Either way, you need access to the card's images, and a way to print out collections of them corresponding to a deck.
 
-`anrproxy` generates pdfs of all cards in a deck to be printed out.
-Decks are specified using [jinteki.net](https://jinteki.net) deck lists that can (should!) be generated with [netrunnerdb.com](https://netrunnerdb.com).
+`anrproxy` generates pdfs of all cards in a deck so that they can be printed out and used as proxies.
+<a href="https://gparmer.github.io/anrproxy/">Try</a> it out!
 
 # Netrunner a dead game?
 
